@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.7.0\n"
+"Project-Id-Version: ClipHistory 2026.9.9\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-07-01 08:19+0700\n"
-"PO-Revision-Date: 2026-07-01 08:30+0700\n"
+"POT-Creation-Date: 2026-09-05 09:21+0700\n"
+"PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Korean\n"
 "Language: ko\n"
@@ -12,114 +12,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: clip.py:215
+#: clip.py:248
 msgid "&Cancel"
 msgstr "취소(&C)"
 
-#: clip.py:265
+#: clip.py:300
 msgid "&Close"
 msgstr "닫기(&C)"
 
-#: clip.py:214
+#: clip.py:247
 msgid "&OK"
 msgstr "확인(&O)"
 
-#: clip.py:263
+#: clip.py:298
 msgid "&Paste"
 msgstr "붙여넣기(&P)"
 
-#: clip.py:439
+#: clip.py:483
 msgid "Clear All"
 msgstr "모두 지우기"
 
-#: clip.py:433
+#: clip.py:477
 msgid "Cleared all non-pinned items"
 msgstr "고정되지 않은 모든 항목을 지웠습니다"
 
-#: __init__.py:205
+#: __init__.py:220
 msgid "Cleared {count} items"
 msgstr "{count}개의 항목을 지웠습니다"
 
-#: clip.py:243
+#: clip.py:278
 msgid "Clip History"
 msgstr "클립 내역"
 
-#: clip.py:452
+#: clip.py:496
 msgid "Delete"
 msgstr "삭제"
 
-#: clip.py:378
+#: clip.py:413
 msgid "Deleted"
 msgstr "삭제됨"
 
-#: clip.py:200
+#: clip.py:230
 msgid "Display name (optional):"
 msgstr "표시 이름 (선택 사항):"
 
-#: clip.py:451
+#: clip.py:495
 msgid "Edit"
 msgstr "편집"
 
-#: clip.py:388
+#: clip.py:424
 msgid "Edit Item"
 msgstr "항목 편집"
 
-#: clip.py:392
+#: clip.py:436
 msgid "Item edited"
 msgstr "항목이 편집됨"
 
-#: clip.py:449
+#: clip.py:493
 msgid "Move Down"
 msgstr "아래로 이동"
 
-#: clip.py:448
+#: clip.py:492
 msgid "Move Up"
 msgstr "위로 이동"
 
-#: clip.py:428
+#: clip.py:472
 msgid "Moved down"
 msgstr "아래로 이동됨"
 
-#: clip.py:416
+#: clip.py:460
 msgid "Moved up"
 msgstr "위로 이동됨"
 
-#: __init__.py:203
+#: __init__.py:218
 msgid "No items to clear"
 msgstr "지울 항목이 없습니다"
 
-#: __init__.py:214
+#: __init__.py:229
 msgid "Opens clip history (single) clears all (double)"
 msgstr "클립 내역 열기 (단일 클릭) 모두 지우기 (더블 클릭)"
 
-#: clip.py:358
+#: clip.py:393
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: clip.py:370
+#: clip.py:405
 msgid "Pasted"
 msgstr "붙여넣음"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Pin"
 msgstr "고정"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Pinned"
 msgstr "고정됨"
 
-#: clip.py:259
+#: clip.py:294
 msgid "Text"
 msgstr "텍스트"
 
-#: clip.py:205
+#: clip.py:238
 msgid "Text content:"
 msgstr "텍스트 내용:"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Unpin"
 msgstr "고정 해제"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Unpinned"
 msgstr "고정 해제됨"

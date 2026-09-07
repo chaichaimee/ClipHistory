@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.7.0\n"
+"Project-Id-Version: ClipHistory 2026.9.9\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-07-01 08:19+0700\n"
-"PO-Revision-Date: 2026-07-01 08:40+0700\n"
+"POT-Creation-Date: 2026-09-05 09:21+0700\n"
+"PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Chinese (Simplified)\n"
 "Language: zh_CN\n"
@@ -12,114 +12,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: clip.py:215
+#: clip.py:248
 msgid "&Cancel"
 msgstr "取消(&C)"
 
-#: clip.py:265
+#: clip.py:300
 msgid "&Close"
 msgstr "关闭(&C)"
 
-#: clip.py:214
+#: clip.py:247
 msgid "&OK"
 msgstr "确定(&O)"
 
-#: clip.py:263
+#: clip.py:298
 msgid "&Paste"
 msgstr "粘贴(&P)"
 
-#: clip.py:439
+#: clip.py:483
 msgid "Clear All"
 msgstr "全部清除"
 
-#: clip.py:433
+#: clip.py:477
 msgid "Cleared all non-pinned items"
 msgstr "已清除所有未固定的项目"
 
-#: __init__.py:205
+#: __init__.py:220
 msgid "Cleared {count} items"
 msgstr "已清除 {count} 个项目"
 
-#: clip.py:243
+#: clip.py:278
 msgid "Clip History"
 msgstr "剪贴板历史"
 
-#: clip.py:452
+#: clip.py:496
 msgid "Delete"
 msgstr "删除"
 
-#: clip.py:378
+#: clip.py:413
 msgid "Deleted"
 msgstr "已删除"
 
-#: clip.py:200
+#: clip.py:230
 msgid "Display name (optional):"
 msgstr "显示名称（可选）："
 
-#: clip.py:451
+#: clip.py:495
 msgid "Edit"
 msgstr "编辑"
 
-#: clip.py:388
+#: clip.py:424
 msgid "Edit Item"
 msgstr "编辑项目"
 
-#: clip.py:392
+#: clip.py:436
 msgid "Item edited"
 msgstr "已编辑项目"
 
-#: clip.py:449
+#: clip.py:493
 msgid "Move Down"
 msgstr "下移"
 
-#: clip.py:448
+#: clip.py:492
 msgid "Move Up"
 msgstr "上移"
 
-#: clip.py:428
+#: clip.py:472
 msgid "Moved down"
 msgstr "已下移"
 
-#: clip.py:416
+#: clip.py:460
 msgid "Moved up"
 msgstr "已上移"
 
-#: __init__.py:203
+#: __init__.py:218
 msgid "No items to clear"
 msgstr "没有可清除的项目"
 
-#: __init__.py:214
+#: __init__.py:229
 msgid "Opens clip history (single) clears all (double)"
 msgstr "打开剪贴板历史（单击）清除全部（双击）"
 
-#: clip.py:358
+#: clip.py:393
 msgid "Paste"
 msgstr "粘贴"
 
-#: clip.py:370
+#: clip.py:405
 msgid "Pasted"
 msgstr "已粘贴"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Pin"
 msgstr "固定"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Pinned"
 msgstr "已固定"
 
-#: clip.py:259
+#: clip.py:294
 msgid "Text"
 msgstr "文本"
 
-#: clip.py:205
+#: clip.py:238
 msgid "Text content:"
 msgstr "文本内容："
 
-#: clip.py:445
+#: clip.py:489
 msgid "Unpin"
 msgstr "取消固定"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Unpinned"
 msgstr "已取消固定"

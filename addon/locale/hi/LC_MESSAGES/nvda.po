@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.7.0\n"
+"Project-Id-Version: ClipHistory 2026.9.9\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-07-01 08:19+0700\n"
-"PO-Revision-Date: 2026-07-01 08:30+0700\n"
+"POT-Creation-Date: 2026-09-05 09:21+0700\n"
+"PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Hindi\n"
 "Language: hi\n"
@@ -12,114 +12,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: clip.py:215
+#: clip.py:248
 msgid "&Cancel"
 msgstr "&रद्द करें"
 
-#: clip.py:265
+#: clip.py:300
 msgid "&Close"
 msgstr "&बंद करें"
 
-#: clip.py:214
+#: clip.py:247
 msgid "&OK"
 msgstr "&ठीक है"
 
-#: clip.py:263
+#: clip.py:298
 msgid "&Paste"
 msgstr "&पेस्ट करें"
 
-#: clip.py:439
+#: clip.py:483
 msgid "Clear All"
 msgstr "सभी साफ़ करें"
 
-#: clip.py:433
+#: clip.py:477
 msgid "Cleared all non-pinned items"
 msgstr "सभी पिन न किए गए आइटम हटा दिए गए"
 
-#: __init__.py:205
+#: __init__.py:220
 msgid "Cleared {count} items"
 msgstr "{count} आइटम हटा दिए गए"
 
-#: clip.py:243
+#: clip.py:278
 msgid "Clip History"
 msgstr "क्लिप इतिहास"
 
-#: clip.py:452
+#: clip.py:496
 msgid "Delete"
 msgstr "हटाएं"
 
-#: clip.py:378
+#: clip.py:413
 msgid "Deleted"
 msgstr "हटाया गया"
 
-#: clip.py:200
+#: clip.py:230
 msgid "Display name (optional):"
 msgstr "प्रदर्शन नाम (वैकल्पिक):"
 
-#: clip.py:451
+#: clip.py:495
 msgid "Edit"
 msgstr "संपादित करें"
 
-#: clip.py:388
+#: clip.py:424
 msgid "Edit Item"
 msgstr "आइटम संपादित करें"
 
-#: clip.py:392
+#: clip.py:436
 msgid "Item edited"
 msgstr "आइटम संपादित किया गया"
 
-#: clip.py:449
+#: clip.py:493
 msgid "Move Down"
 msgstr "नीचे ले जाएं"
 
-#: clip.py:448
+#: clip.py:492
 msgid "Move Up"
 msgstr "ऊपर ले जाएं"
 
-#: clip.py:428
+#: clip.py:472
 msgid "Moved down"
 msgstr "नीचे ले जाया गया"
 
-#: clip.py:416
+#: clip.py:460
 msgid "Moved up"
 msgstr "ऊपर ले जाया गया"
 
-#: __init__.py:203
+#: __init__.py:218
 msgid "No items to clear"
 msgstr "साफ़ करने के लिए कोई आइटम नहीं है"
 
-#: __init__.py:214
+#: __init__.py:229
 msgid "Opens clip history (single) clears all (double)"
 msgstr "क्लिप इतिहास खोलें (एकल) सभी साफ़ करें (डबल)"
 
-#: clip.py:358
+#: clip.py:393
 msgid "Paste"
 msgstr "पेस्ट करें"
 
-#: clip.py:370
+#: clip.py:405
 msgid "Pasted"
 msgstr "पेस्ट किया गया"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Pin"
 msgstr "पिन करें"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Pinned"
 msgstr "पिन किया गया"
 
-#: clip.py:259
+#: clip.py:294
 msgid "Text"
 msgstr "टेक्स्ट"
 
-#: clip.py:205
+#: clip.py:238
 msgid "Text content:"
 msgstr "टेक्स्ट सामग्री:"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Unpin"
 msgstr "पिन हटाएं"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Unpinned"
 msgstr "पिन हटाया गया"

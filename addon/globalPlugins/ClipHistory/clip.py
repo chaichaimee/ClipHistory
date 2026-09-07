@@ -6,8 +6,9 @@ import json
 import ui
 import api
 import core
+import gui
 import addonHandler
-import config
+import globalVars
 import logging
 import html as html_lib
 import time
@@ -30,10 +31,11 @@ class ClipHistoryManager:
 	def __init__(self):
 		self.data_path = self._get_data_path()
 		self.items = []
+		self._items_lock = threading.RLock()
 		self._load_async()
 
 	def _get_data_path(self):
-		config_dir = os.path.join(config.getUserDefaultConfigPath(), "ChaiChaimee")
+		config_dir = os.path.join(globalVars.appArgs.configPath, "ChaiChaimee")
 		if not os.path.exists(config_dir):
 			os.makedirs(config_dir)
 		return os.path.join(config_dir, "ClipHistory.json")
@@ -42,35 +44,47 @@ class ClipHistoryManager:
 		def _do_load():
 			try:
 				if not os.path.exists(self.data_path):
-					self.items = []
 					return
 				file_size = os.path.getsize(self.data_path)
 				if file_size > 1024 * 1024:
 					log.warning(f"Large history file ({file_size} bytes), loading may be slow")
 				with open(self.data_path, "r", encoding="utf-8") as f:
 					loaded = json.load(f)
-				
-				if isinstance(loaded, list):
-					new_items = []
-					for entry in loaded:
-						if isinstance(entry, str):
-							new_items.append({"text": entry, "pinned": False, "html": None, "display_name": None})
-						elif isinstance(entry, dict):
-							item = {
-								"text": entry.get("text", ""),
-								"pinned": entry.get("pinned", False),
-								"html": entry.get("html"),
-								"display_name": entry.get("display_name")
-							}
-							if item["text"]:
-								new_items.append(item)
-					self.items = new_items
-				else:
-					self.items = []
+
+				if not isinstance(loaded, list):
+					return
+
+				loaded_items = []
+				for entry in loaded:
+					if isinstance(entry, str):
+						loaded_items.append({"text": entry, "pinned": False, "html": None, "display_name": None})
+					elif isinstance(entry, dict):
+						item = {
+							"text": entry.get("text", ""),
+							"pinned": entry.get("pinned", False),
+							"html": entry.get("html"),
+							"display_name": entry.get("display_name")
+						}
+						if item["text"]:
+							loaded_items.append(item)
+
+				# Merge rather than overwrite: clipboard items captured on the
+				# main thread while this background load was still running
+				# must not be discarded. Anything already present in
+				# self.items (inserted at index 0 by add_item) is kept in
+				# front, followed by the items loaded from disk, skipping
+				# duplicates by text.
+				with self._items_lock:
+					existing_texts = {item["text"] for item in self.items}
+					merged = list(self.items)
+					for item in loaded_items:
+						if item["text"] not in existing_texts:
+							merged.append(item)
+							existing_texts.add(item["text"])
+					self.items = merged
 			except Exception as e:
 				log.error(f"Failed to load: {e}")
-				self.items = []
-		
+
 		threading.Thread(target=_do_load, daemon=True).start()
 
 	def _truncate_if_needed(self):
@@ -93,7 +107,7 @@ class ClipHistoryManager:
 	def save(self, immediate=False):
 		if ClipHistoryManager._save_timer and ClipHistoryManager._save_timer.IsRunning():
 			ClipHistoryManager._save_timer.Stop()
-		
+
 		if immediate:
 			self._perform_save()
 		else:
@@ -105,10 +119,12 @@ class ClipHistoryManager:
 			return
 		ClipHistoryManager._is_saving = True
 		try:
+			with self._items_lock:
+				items_snapshot = list(self.items)
 			unique_suffix = int(time.time() * 1000)
 			temp_path = f"{self.data_path}.{unique_suffix}.tmp"
 			with open(temp_path, "w", encoding="utf-8") as f:
-				json.dump(self.items, f, ensure_ascii=False, indent=2)
+				json.dump(items_snapshot, f, ensure_ascii=False, indent=2)
 			os.replace(temp_path, self.data_path)
 		except Exception as e:
 			log.error(f"Async save failed: {e}")
@@ -121,71 +137,84 @@ class ClipHistoryManager:
 		text = data['text']
 		html = data.get('html')
 
-		for i, item in enumerate(self.items):
-			if item["text"] == text:
-				pinned = item["pinned"]
-				display_name = item.get("display_name")
-				del self.items[i]
-				self.items.insert(0, {"text": text, "pinned": pinned, "html": html, "display_name": display_name})
+		with self._items_lock:
+			for i, item in enumerate(self.items):
+				if item["text"] == text:
+					pinned = item["pinned"]
+					display_name = item.get("display_name")
+					del self.items[i]
+					self.items.insert(0, {"text": text, "pinned": pinned, "html": html, "display_name": display_name})
+					self._truncate_if_needed()
+					break
+			else:
+				self.items.insert(0, {"text": text, "pinned": False, "html": html, "display_name": None})
 				self._truncate_if_needed()
-				self.save()
-				return
-
-		self.items.insert(0, {"text": text, "pinned": False, "html": html, "display_name": None})
-		self._truncate_if_needed()
 		self.save()
 
 	def remove_item(self, index):
-		if 0 <= index < len(self.items):
+		with self._items_lock:
+			if not (0 <= index < len(self.items)):
+				return
 			del self.items[index]
-			self.save()
+		self.save()
 
 	def edit_item(self, index, new_text, new_display_name=None):
-		if 0 <= index < len(self.items) and new_text:
+		with self._items_lock:
+			if not (0 <= index < len(self.items) and new_text):
+				return
 			self.items[index]["text"] = new_text
 			self.items[index]["html"] = None
 			if new_display_name is not None:
 				self.items[index]["display_name"] = new_display_name if new_display_name.strip() else None
-			self.save()
+		self.save()
 
 	def toggle_pin(self, index):
-		if 0 <= index < len(self.items):
+		with self._items_lock:
+			if not (0 <= index < len(self.items)):
+				return
 			self.items[index]["pinned"] = not self.items[index]["pinned"]
-			self.save()
+		self.save()
 
 	def move_up(self, index):
-		if 0 < index < len(self.items):
+		with self._items_lock:
+			if not (0 < index < len(self.items)):
+				return
 			self.items[index], self.items[index - 1] = self.items[index - 1], self.items[index]
-			self.save()
+		self.save()
 
 	def move_down(self, index):
-		if 0 <= index < len(self.items) - 1:
+		with self._items_lock:
+			if not (0 <= index < len(self.items) - 1):
+				return
 			self.items[index], self.items[index + 1] = self.items[index + 1], self.items[index]
-			self.save()
+		self.save()
 
 	def move_to_top(self, index):
-		if index <= 0 or index >= len(self.items):
-			return
-		item = self.items.pop(index)
-		self.items.insert(0, item)
+		with self._items_lock:
+			if index <= 0 or index >= len(self.items):
+				return
+			item = self.items.pop(index)
+			self.items.insert(0, item)
 		self.save()
 
 	def clear_all(self):
-		self.items.clear()
+		with self._items_lock:
+			self.items.clear()
 		self.save(immediate=True)
 
 	def clear_non_pinned(self):
-		self.items = [item for item in self.items if item.get("pinned", False)]
+		with self._items_lock:
+			self.items = [item for item in self.items if item.get("pinned", False)]
 		self.save(immediate=True)
 
 
 class EditTextDialog(wx.Dialog):
-	def __init__(self, parent, title, initial_text, is_pinned=False, word_count=0):
+	def __init__(self, parent, title, initial_text, is_pinned=False, current_display_name=None):
 		super().__init__(parent, title=title, size=(650, 500),
 						 style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
 		self.initial_text = initial_text
 		self.is_pinned = is_pinned
-		self.word_count = word_count
+		self.current_display_name = current_display_name
 		self.result_text = None
 		self.result_display_name = None
 		self.init_ui()
@@ -196,10 +225,14 @@ class EditTextDialog(wx.Dialog):
 		sizer = wx.BoxSizer(wx.VERTICAL)
 
 		self.display_name_ctrl = None
-		if self.is_pinned and self.word_count > 25:
+		# Fixed: If pinned, always show the display name field.
+		if self.is_pinned:
 			display_label = wx.StaticText(panel, label=_("Display name (optional):"))
 			sizer.Add(display_label, 0, wx.ALL | wx.ALIGN_LEFT, 5)
 			self.display_name_ctrl = wx.TextCtrl(panel)
+			# If you have the original name to be displayed in the box
+			if self.current_display_name:
+				self.display_name_ctrl.SetValue(self.current_display_name)
 			sizer.Add(self.display_name_ctrl, 0, wx.EXPAND | wx.ALL, 5)
 
 		text_label = wx.StaticText(panel, label=_("Text content:"))
@@ -230,6 +263,8 @@ class EditTextDialog(wx.Dialog):
 		self.result_text = self.text_ctrl.GetValue()
 		if self.display_name_ctrl:
 			self.result_display_name = self.display_name_ctrl.GetValue()
+		else:
+			self.result_display_name = None
 		self.EndModal(wx.ID_OK)
 
 	def on_cancel(self, event):
@@ -384,9 +419,18 @@ class ClipHistoryDialog(wx.Dialog):
 		item = self.manager.items[idx]
 		current_text = item["text"]
 		is_pinned = item.get("pinned", False)
-		word_count = len(current_text.split())
-		dlg = EditTextDialog(self, _("Edit Item"), current_text, is_pinned, word_count)
-		if dlg.ShowModal() == wx.ID_OK and dlg.result_text is not None:
+		# Retrieve the current display name (if any) and display it in the dialog
+		current_display_name = item.get("display_name") if is_pinned else None
+		dlg = EditTextDialog(self, _("Edit Item"), current_text, is_pinned, current_display_name)
+		# prePopup/postPopup must bracket ShowModal, otherwise EVT_CHAR_HOOK
+		# can silently fail to fire and the dialog looks open but does not
+		# respond to keyboard input, with no visual cue for a blind user.
+		gui.mainFrame.prePopup()
+		try:
+			result = dlg.ShowModal()
+		finally:
+			gui.mainFrame.postPopup()
+		if result == wx.ID_OK and dlg.result_text is not None:
 			self.manager.edit_item(idx, dlg.result_text, dlg.result_display_name)
 			self.update_list()
 			ui.message(_("Item edited"))

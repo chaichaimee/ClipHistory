@@ -173,8 +173,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._disable_timer = None
 
 	def terminate(self):
+		# Cancel the debounced clipboard re-enable timer so it cannot fire
+		# against a plugin instance that no longer owns valid state.
 		if self._disable_timer and self._disable_timer.IsRunning():
 			self._disable_timer.Stop()
+		self._disable_timer = None
+
+		# Cancel the multi-tap gesture timer. Without this, a windows+v tap
+		# pending at the moment of a reload would fire _execute_tap_action
+		# against a dead instance.
+		if self._tap_timer and self._tap_timer.IsRunning():
+			self._tap_timer.Stop()
+		self._tap_timer = None
+
 		if self._hwnd:
 			ctypes.windll.user32.RemoveClipboardFormatListener(self._hwnd)
 			ctypes.windll.user32.DestroyWindow(self._hwnd)
@@ -187,7 +198,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self.dialog:
 			self.dialog.Destroy()
 		if hasattr(self, 'manager'):
-			self.manager.save()
+			# Force an immediate, synchronous save on shutdown instead of the
+			# debounced save. A debounced wx.CallLater scheduled here may
+			# never fire once NVDA finishes unloading the add-on, silently
+			# losing the most recent clipboard entry.
+			self.manager.save(immediate=True)
 		log.info("ClipHistory plugin terminated")
 
 	def _execute_tap_action(self):

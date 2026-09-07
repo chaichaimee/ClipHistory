@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.7.0\n"
+"Project-Id-Version: ClipHistory 2026.9.9\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-07-01 08:19+0700\n"
-"PO-Revision-Date: 2026-07-01 08:40+0700\n"
+"POT-Creation-Date: 2026-09-05 09:21+0700\n"
+"PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -12,114 +12,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: clip.py:215
+#: clip.py:248
 msgid "&Cancel"
 msgstr "&Скасувати"
 
-#: clip.py:265
+#: clip.py:300
 msgid "&Close"
 msgstr "&Закрити"
 
-#: clip.py:214
+#: clip.py:247
 msgid "&OK"
 msgstr "&ОК"
 
-#: clip.py:263
+#: clip.py:298
 msgid "&Paste"
 msgstr "&Вставити"
 
-#: clip.py:439
+#: clip.py:483
 msgid "Clear All"
 msgstr "Очистити все"
 
-#: clip.py:433
+#: clip.py:477
 msgid "Cleared all non-pinned items"
 msgstr "Очищено всі незакріплені елементи"
 
-#: __init__.py:205
+#: __init__.py:220
 msgid "Cleared {count} items"
 msgstr "Очищено {count} елементів"
 
-#: clip.py:243
+#: clip.py:278
 msgid "Clip History"
 msgstr "Історія буфера обміну"
 
-#: clip.py:452
+#: clip.py:496
 msgid "Delete"
 msgstr "Видалити"
 
-#: clip.py:378
+#: clip.py:413
 msgid "Deleted"
 msgstr "Видалено"
 
-#: clip.py:200
+#: clip.py:230
 msgid "Display name (optional):"
 msgstr "Відображуване ім'я (необов'язково):"
 
-#: clip.py:451
+#: clip.py:495
 msgid "Edit"
 msgstr "Редагувати"
 
-#: clip.py:388
+#: clip.py:424
 msgid "Edit Item"
 msgstr "Редагувати елемент"
 
-#: clip.py:392
+#: clip.py:436
 msgid "Item edited"
 msgstr "Елемент відредаговано"
 
-#: clip.py:449
+#: clip.py:493
 msgid "Move Down"
 msgstr "Перемістити вниз"
 
-#: clip.py:448
+#: clip.py:492
 msgid "Move Up"
 msgstr "Перемістити вгору"
 
-#: clip.py:428
+#: clip.py:472
 msgid "Moved down"
 msgstr "Переміщено вниз"
 
-#: clip.py:416
+#: clip.py:460
 msgid "Moved up"
 msgstr "Переміщено вгору"
 
-#: __init__.py:203
+#: __init__.py:218
 msgid "No items to clear"
 msgstr "Немає елементів для очищення"
 
-#: __init__.py:214
+#: __init__.py:229
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Відкрити історію (одинарний) очистити все (подвійний)"
 
-#: clip.py:358
+#: clip.py:393
 msgid "Paste"
 msgstr "Вставити"
 
-#: clip.py:370
+#: clip.py:405
 msgid "Pasted"
 msgstr "Вставлено"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Pin"
 msgstr "Закріпити"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Pinned"
 msgstr "Закріплено"
 
-#: clip.py:259
+#: clip.py:294
 msgid "Text"
 msgstr "Текст"
 
-#: clip.py:205
+#: clip.py:238
 msgid "Text content:"
 msgstr "Текстовий вміст:"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Unpin"
 msgstr "Відкріпити"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Unpinned"
 msgstr "Відкріплено"

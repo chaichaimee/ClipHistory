@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.7.0\n"
+"Project-Id-Version: ClipHistory 2026.9.9\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-07-01 08:19+0700\n"
-"PO-Revision-Date: 2026-07-01 08:31+0700\n"
+"POT-Creation-Date: 2026-09-05 09:21+0700\n"
+"PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -12,114 +12,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: clip.py:215
+#: clip.py:248
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: clip.py:265
+#: clip.py:300
 msgid "&Close"
 msgstr "&Fechar"
 
-#: clip.py:214
+#: clip.py:247
 msgid "&OK"
 msgstr "&OK"
 
-#: clip.py:263
+#: clip.py:298
 msgid "&Paste"
 msgstr "&Colar"
 
-#: clip.py:439
+#: clip.py:483
 msgid "Clear All"
 msgstr "Limpar tudo"
 
-#: clip.py:433
+#: clip.py:477
 msgid "Cleared all non-pinned items"
 msgstr "Limpos todos os itens não fixados"
 
-#: __init__.py:205
+#: __init__.py:220
 msgid "Cleared {count} items"
 msgstr "{count} itens limpos"
 
-#: clip.py:243
+#: clip.py:278
 msgid "Clip History"
 msgstr "Histórico da área de transferência"
 
-#: clip.py:452
+#: clip.py:496
 msgid "Delete"
 msgstr "Excluir"
 
-#: clip.py:378
+#: clip.py:413
 msgid "Deleted"
 msgstr "Excluído"
 
-#: clip.py:200
+#: clip.py:230
 msgid "Display name (optional):"
 msgstr "Nome de exibição (opcional):"
 
-#: clip.py:451
+#: clip.py:495
 msgid "Edit"
 msgstr "Editar"
 
-#: clip.py:388
+#: clip.py:424
 msgid "Edit Item"
 msgstr "Editar item"
 
-#: clip.py:392
+#: clip.py:436
 msgid "Item edited"
 msgstr "Item editado"
 
-#: clip.py:449
+#: clip.py:493
 msgid "Move Down"
 msgstr "Mover para baixo"
 
-#: clip.py:448
+#: clip.py:492
 msgid "Move Up"
 msgstr "Mover para cima"
 
-#: clip.py:428
+#: clip.py:472
 msgid "Moved down"
 msgstr "Movido para baixo"
 
-#: clip.py:416
+#: clip.py:460
 msgid "Moved up"
 msgstr "Movido para cima"
 
-#: __init__.py:203
+#: __init__.py:218
 msgid "No items to clear"
 msgstr "Sem itens para limpar"
 
-#: __init__.py:214
+#: __init__.py:229
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Abre o histórico (clique único) limpa tudo (clique duplo)"
 
-#: clip.py:358
+#: clip.py:393
 msgid "Paste"
 msgstr "Colar"
 
-#: clip.py:370
+#: clip.py:405
 msgid "Pasted"
 msgstr "Colado"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Pin"
 msgstr "Fixar"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Pinned"
 msgstr "Fixado"
 
-#: clip.py:259
+#: clip.py:294
 msgid "Text"
 msgstr "Texto"
 
-#: clip.py:205
+#: clip.py:238
 msgid "Text content:"
 msgstr "Conteúdo do texto:"
 
-#: clip.py:445
+#: clip.py:489
 msgid "Unpin"
 msgstr "Desfixar"
 
-#: clip.py:404
+#: clip.py:448
 msgid "Unpinned"
 msgstr "Desfixado"
