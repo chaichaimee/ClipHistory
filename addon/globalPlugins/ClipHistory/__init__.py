@@ -153,10 +153,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		try:
 			data = clipboard_utils.get_clipboard_data()
-			if data and data.get('text') and data['text'] != self.last_clipboard_text:
+			if not data:
+				return
+			text = data.get('text')
+			if not text and data.get('html'):
+				# Some sources (e.g. a website's "Copy" button on a code
+				# block, confirmed with a PowerShell/cmd snippet) only
+				# populate the HTML clipboard format and never set
+				# CF_UNICODETEXT, so the item was silently skipped by the
+				# text-only check below. Derive a plain-text fallback from
+				# the HTML fragment so it still gets captured.
+				text = clipboard_utils.html_to_text(data['html'])
+				data['text'] = text
+			if text and text != self.last_clipboard_text:
 				self.manager.add_item(data)
-				self.last_clipboard_text = data['text']
-				log.info(f"New clipboard item captured: {data['text'][:50]}")
+				self.last_clipboard_text = text
+				log.info(f"New clipboard item captured: {text[:50]}")
 				if self.dialog and self.dialog.IsShown():
 					wx.CallAfter(self.dialog.update_list)
 		except Exception as e:
@@ -214,6 +226,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				# Count the number of items to be deleted (Only those that are not pinned)
 				non_pinned_count = sum(1 for item in self.manager.items if not item.get("pinned", False))
 				self.manager.clear_non_pinned()
+				# "Clear" previously only wiped the in-dialog list and the
+				# JSON store, leaving whatever text was last pasted still
+				# sitting on the real Windows clipboard. Empty the system
+				# clipboard too so "clear" actually clears everything.
+				clipboard_utils.clear_clipboard()
+				self.last_clipboard_text = ""
 				if non_pinned_count == 0:
 					ui.message(_("No items to clear"))
 				else:

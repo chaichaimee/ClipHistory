@@ -1,5 +1,3 @@
-# clip.py
-
 import wx
 import os
 import json
@@ -473,6 +471,12 @@ class ClipHistoryDialog(wx.Dialog):
 
 	def on_clear_all(self, event):
 		self.manager.clear_non_pinned()
+		# "Clear All" previously only removed non-pinned items from the
+		# dialog/JSON store and left the real Windows clipboard untouched,
+		# so whatever was last pasted stayed on the clipboard. Empty the
+		# system clipboard too so this action actually clears everything.
+		clipboard_utils.clear_clipboard()
+		self.plugin.last_clipboard_text = ""
 		self.update_list()
 		ui.message(_("Cleared all non-pinned items"))
 

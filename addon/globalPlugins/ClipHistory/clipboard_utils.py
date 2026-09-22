@@ -1,9 +1,9 @@
-# clipboard_utils.py
-
 import ctypes
 from ctypes import wintypes
 import logging
 import hashlib
+import re
+import html as html_lib
 import addonHandler
 
 addonHandler.initTranslation()
@@ -15,6 +15,7 @@ kernel32 = ctypes.windll.kernel32
 CF_UNICODETEXT = 13
 _HTML_FORMAT_ID = None
 MAX_CLIPBOARD_SIZE = 5 * 1024 * 1024
+_HTML_TAG_RE = re.compile(r"<[^>]+>")
 
 kernel32.GlobalAlloc.argtypes = [wintypes.UINT, ctypes.c_size_t]
 kernel32.GlobalAlloc.restype = wintypes.HGLOBAL
@@ -120,6 +121,22 @@ def _read_html(handle):
 
 	fragment = raw[start_offset:end_offset]
 	return fragment
+
+def html_to_text(fragment_html):
+	# Best-effort plain-text fallback for clipboard sources that only ever
+	# populate the HTML format (no CF_UNICODETEXT), such as some websites'
+	# "Copy" buttons on a code block. Strips tags and unescapes entities;
+	# not a full HTML parse, just enough to keep the item capturable and
+	# readable in the history list.
+	if not fragment_html:
+		return None
+	try:
+		stripped = _HTML_TAG_RE.sub("", fragment_html)
+		text = html_lib.unescape(stripped).strip()
+		return text or None
+	except Exception as e:
+		log.warning(f"Error converting HTML fragment to text: {e}")
+		return None
 
 def get_clipboard_data():
 	if not user32.OpenClipboard(0):
@@ -227,3 +244,19 @@ def set_clipboard_data(text, html=None):
 	finally:
 		user32.CloseClipboard()
 	return success
+
+def clear_clipboard():
+	# Used by "Clear"/"Clear All" so clearing the history also empties the
+	# real Windows clipboard, instead of leaving whatever was last pasted
+	# sitting there after the in-dialog/JSON history has been wiped.
+	if not user32.OpenClipboard(0):
+		log.warning("Failed to open clipboard for clearing")
+		return False
+	try:
+		user32.EmptyClipboard()
+	except Exception as e:
+		log.warning(f"Error clearing clipboard: {e}")
+		return False
+	finally:
+		user32.CloseClipboard()
+	return True
