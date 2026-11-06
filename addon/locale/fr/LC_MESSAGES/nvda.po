@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.9.9\n"
+"Project-Id-Version: ClipHistory 2026.11.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-05 09:21+0700\n"
+"POT-Creation-Date: 2026-11-06 10:46+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: French\n"
@@ -10,116 +10,116 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: clip.py:248
+#: clip.py:247
 msgid "&Cancel"
 msgstr "&Annuler"
 
-#: clip.py:300
+#: clip.py:299
 msgid "&Close"
 msgstr "&Fermer"
 
-#: clip.py:247
+#: clip.py:246
 msgid "&OK"
 msgstr "&OK"
 
-#: clip.py:298
+#: clip.py:297
 msgid "&Paste"
 msgstr "&Coller"
 
-#: clip.py:483
+#: clip.py:484
 msgid "Clear All"
 msgstr "Tout effacer"
 
-#: clip.py:477
+#: clip.py:478
 msgid "Cleared all non-pinned items"
 msgstr "Tous les éléments non épinglés ont été effacés"
 
-#: __init__.py:220
+#: clipCore.py:236
 msgid "Cleared {count} items"
 msgstr "{count} éléments effacés"
 
-#: clip.py:278
+#: clip.py:277
 msgid "Clip History"
 msgstr "Historique du presse-papiers"
 
-#: clip.py:496
+#: clip.py:497
 msgid "Delete"
 msgstr "Supprimer"
 
-#: clip.py:413
+#: clip.py:408
 msgid "Deleted"
 msgstr "Supprimé"
 
-#: clip.py:230
+#: clip.py:229
 msgid "Display name (optional):"
 msgstr "Nom d'affichage (facultatif) :"
 
-#: clip.py:495
+#: clip.py:496
 msgid "Edit"
 msgstr "Modifier"
 
-#: clip.py:424
+#: clip.py:419
 msgid "Edit Item"
 msgstr "Modifier l'élément"
 
-#: clip.py:436
+#: clip.py:431
 msgid "Item edited"
 msgstr "Élément modifié"
 
-#: clip.py:493
+#: clip.py:494
 msgid "Move Down"
 msgstr "Déplacer vers le bas"
 
-#: clip.py:492
+#: clip.py:493
 msgid "Move Up"
 msgstr "Déplacer vers le haut"
 
-#: clip.py:472
+#: clip.py:467
 msgid "Moved down"
 msgstr "Déplacé vers le bas"
 
-#: clip.py:460
+#: clip.py:455
 msgid "Moved up"
 msgstr "Déplacé vers le haut"
 
-#: __init__.py:218
+#: clipCore.py:234
 msgid "No items to clear"
 msgstr "Aucun élément à effacer"
 
-#: __init__.py:229
+#: clipCore.py:245
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Ouvre l'historique (simple) efface tout (double)"
 
-#: clip.py:393
+#: clip.py:388
 msgid "Paste"
 msgstr "Coller"
 
-#: clip.py:405
+#: clip.py:400
 msgid "Pasted"
 msgstr "Collé"
 
-#: clip.py:489
+#: clip.py:490
 msgid "Pin"
 msgstr "Épingler"
 
-#: clip.py:448
+#: clip.py:443
 msgid "Pinned"
 msgstr "Épinglé"
 
-#: clip.py:294
+#: clip.py:293
 msgid "Text"
 msgstr "Texte"
 
-#: clip.py:238
+#: clip.py:237
 msgid "Text content:"
 msgstr "Contenu du texte :"
 
-#: clip.py:489
+#: clip.py:490
 msgid "Unpin"
 msgstr "Désépingler"
 
-#: clip.py:448
+#: clip.py:443
 msgid "Unpinned"
 msgstr "Désépinglé"

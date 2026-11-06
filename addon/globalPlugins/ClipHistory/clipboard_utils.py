@@ -1,3 +1,5 @@
+# clipboard_utils.py
+
 import ctypes
 from ctypes import wintypes
 import logging
@@ -16,6 +18,7 @@ CF_UNICODETEXT = 13
 _HTML_FORMAT_ID = None
 MAX_CLIPBOARD_SIZE = 5 * 1024 * 1024
 _HTML_TAG_RE = re.compile(r"<[^>]+>")
+_HTML_NOISE_RE = re.compile(r"<!--.*?-->|<(style|script)\b[^>]*>.*?</\1>", re.IGNORECASE | re.DOTALL)
 
 kernel32.GlobalAlloc.argtypes = [wintypes.UINT, ctypes.c_size_t]
 kernel32.GlobalAlloc.restype = wintypes.HGLOBAL
@@ -91,36 +94,31 @@ def _read_html(handle):
 		return None
 	try:
 		data = ctypes.string_at(ptr, size)
-		raw = data.decode('utf-8', errors='replace')
 	except Exception as e:
 		log.warning(f"Error reading CF_HTML bytes: {e}")
 		return None
 	finally:
 		kernel32.GlobalUnlock(handle)
 
-	start_marker = "StartFragment:"
-	end_marker = "EndFragment:"
-	start_idx = raw.find(start_marker)
-	end_idx = raw.find(end_marker)
-	if start_idx == -1 or end_idx == -1:
-		log.warning("HTML Format missing StartFragment/EndFragment markers")
-		return None
-
 	try:
-		start_line = raw[start_idx + len(start_marker):].split('\r\n')[0]
-		end_line = raw[end_idx + len(end_marker):].split('\r\n')[0]
-		start_offset = int(start_line.strip())
-		end_offset = int(end_line.strip())
-	except (IndexError, ValueError) as e:
+		start_offset = _read_header_offset(data, b"StartFragment:")
+		end_offset = _read_header_offset(data, b"EndFragment:")
+	except ValueError as e:
 		log.warning(f"Failed to parse fragment offsets: {e}")
 		return None
 
-	if not (0 <= start_offset < end_offset <= len(raw)):
-		log.warning(f"Invalid fragment offsets: start={start_offset}, end={end_offset}, length={len(raw)}")
+	if not (0 <= start_offset < end_offset <= len(data)):
+		log.warning(f"Invalid fragment offsets: start={start_offset}, end={end_offset}, length={len(data)}")
 		return None
 
-	fragment = raw[start_offset:end_offset]
-	return fragment
+	return data[start_offset:end_offset].decode('utf-8', errors='replace')
+
+def _read_header_offset(data, marker):
+	marker_idx = data.find(marker)
+	if marker_idx == -1:
+		raise ValueError(f"missing {marker.decode('ascii')} header")
+	line = data[marker_idx + len(marker):].split(b"\n")[0]
+	return int(line.strip())
 
 def html_to_text(fragment_html):
 	# Best-effort plain-text fallback for clipboard sources that only ever
@@ -131,7 +129,7 @@ def html_to_text(fragment_html):
 	if not fragment_html:
 		return None
 	try:
-		stripped = _HTML_TAG_RE.sub("", fragment_html)
+		stripped = _HTML_TAG_RE.sub("", _HTML_NOISE_RE.sub("", fragment_html))
 		text = html_lib.unescape(stripped).strip()
 		return text or None
 	except Exception as e:
@@ -186,32 +184,23 @@ def _set_unicode_text(text):
 def _set_html(html):
 	if not html:
 		return False
-	header = (
+	fragment_bytes = html.encode('utf-8')
+	prefix_bytes = b"<html><body>\r\n<!--StartFragment-->"
+	suffix_bytes = b"<!--EndFragment-->\r\n</body></html>"
+	header_template = (
 		"Version:0.9\r\n"
-		"StartHTML:XXXXXXXX\r\n"
-		"EndHTML:XXXXXXXX\r\n"
-		"StartFragment:XXXXXXXX\r\n"
-		"EndFragment:XXXXXXXX\r\n"
+		"StartHTML:{:010d}\r\n"
+		"EndHTML:{:010d}\r\n"
+		"StartFragment:{:010d}\r\n"
+		"EndFragment:{:010d}\r\n"
 	)
-	fragment = html
-	data_bytes = (header + fragment).encode('utf-8')
-	start_html = 0
-	start_fragment = header.find("StartFragment:") + len("StartFragment:")
-	start_fragment = header.find("\r\n", start_fragment) + 2
-	end_fragment = start_fragment + len(fragment)
-	end_html = len(data_bytes)
-
-	start_html_str = f"{start_html:08d}"
-	end_html_str = f"{end_html:08d}"
-	start_frag_str = f"{start_fragment:08d}"
-	end_frag_str = f"{end_fragment:08d}"
-
-	header = header.replace("XXXXXXXX", start_html_str, 1)
-	header = header.replace("XXXXXXXX", end_html_str, 1)
-	header = header.replace("XXXXXXXX", start_frag_str, 1)
-	header = header.replace("XXXXXXXX", end_frag_str, 1)
-
-	final_data = (header + fragment).encode('utf-8')
+	header_length = len(header_template.format(0, 0, 0, 0).encode('ascii'))
+	start_html = header_length
+	start_fragment = start_html + len(prefix_bytes)
+	end_fragment = start_fragment + len(fragment_bytes)
+	end_html = end_fragment + len(suffix_bytes)
+	header = header_template.format(start_html, end_html, start_fragment, end_fragment)
+	final_data = header.encode('ascii') + prefix_bytes + fragment_bytes + suffix_bytes + b"\x00"
 	size = len(final_data)
 
 	h_mem = kernel32.GlobalAlloc(0x0042, size)
@@ -226,8 +215,9 @@ def _set_html(html):
 	finally:
 		kernel32.GlobalUnlock(h_mem)
 
-	html_format = _get_html_format_id()
-	user32.SetClipboardData(html_format, h_mem)
+	if not user32.SetClipboardData(_get_html_format_id(), h_mem):
+		kernel32.GlobalFree(h_mem)
+		return False
 	return True
 
 def set_clipboard_data(text, html=None):

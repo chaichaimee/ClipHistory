@@ -1,3 +1,5 @@
+# clip.py
+
 import wx
 import os
 import json
@@ -8,7 +10,6 @@ import gui
 import addonHandler
 import globalVars
 import logging
-import html as html_lib
 import time
 import ctypes
 import threading
@@ -315,11 +316,7 @@ class ClipHistoryDialog(wx.Dialog):
 				char_count = len(item['text'])
 				display_text = f"{display_name} {char_count} characters"
 			else:
-				if item.get('html'):
-					raw = item['html']
-				else:
-					raw = item['text']
-				display_text = html_lib.unescape(raw)
+				display_text = item['text']
 				if len(display_text) > 200:
 					display_text = display_text[:200] + "..."
 

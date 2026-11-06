@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.10.0\n"
+"Project-Id-Version: ClipHistory 2026.11.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-22 15:55+0700\n"
+"POT-Creation-Date: 2026-11-06 10:46+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -10,116 +10,116 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: clip.py:246
+#: clip.py:247
 msgid "&Cancel"
 msgstr "&Cancel"
 
-#: clip.py:298
+#: clip.py:299
 msgid "&Close"
 msgstr "&Close"
 
-#: clip.py:245
+#: clip.py:246
 msgid "&OK"
 msgstr "&OK"
 
-#: clip.py:296
+#: clip.py:297
 msgid "&Paste"
 msgstr "&Paste"
 
-#: clip.py:487
+#: clip.py:484
 msgid "Clear All"
 msgstr "Clear All"
 
-#: clip.py:481
+#: clip.py:478
 msgid "Cleared all non-pinned items"
 msgstr "Cleared all non-pinned items"
 
-#: __init__.py:238
+#: clipCore.py:236
 msgid "Cleared {count} items"
 msgstr "Cleared {count} items"
 
-#: clip.py:276
+#: clip.py:277
 msgid "Clip History"
 msgstr "Clip History"
 
-#: clip.py:500
+#: clip.py:497
 msgid "Delete"
 msgstr "Delete"
 
-#: clip.py:411
+#: clip.py:408
 msgid "Deleted"
 msgstr "Deleted"
 
-#: clip.py:228
+#: clip.py:229
 msgid "Display name (optional):"
 msgstr "Display name (optional):"
 
-#: clip.py:499
+#: clip.py:496
 msgid "Edit"
 msgstr "Edit"
 
-#: clip.py:422
+#: clip.py:419
 msgid "Edit Item"
 msgstr "Edit Item"
 
-#: clip.py:434
+#: clip.py:431
 msgid "Item edited"
 msgstr "Item edited"
 
-#: clip.py:497
+#: clip.py:494
 msgid "Move Down"
 msgstr "Move Down"
 
-#: clip.py:496
+#: clip.py:493
 msgid "Move Up"
 msgstr "Move Up"
 
-#: clip.py:470
+#: clip.py:467
 msgid "Moved down"
 msgstr "Moved down"
 
-#: clip.py:458
+#: clip.py:455
 msgid "Moved up"
 msgstr "Moved up"
 
-#: __init__.py:236
+#: clipCore.py:234
 msgid "No items to clear"
 msgstr "No items to clear"
 
-#: __init__.py:247
+#: clipCore.py:245
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Opens clip history (single) clears all (double)"
 
-#: clip.py:391
+#: clip.py:388
 msgid "Paste"
 msgstr "Paste"
 
-#: clip.py:403
+#: clip.py:400
 msgid "Pasted"
 msgstr "Pasted"
 
-#: clip.py:493
+#: clip.py:490
 msgid "Pin"
 msgstr "Pin"
 
-#: clip.py:446
+#: clip.py:443
 msgid "Pinned"
 msgstr "Pinned"
 
-#: clip.py:292
+#: clip.py:293
 msgid "Text"
 msgstr "Text"
 
-#: clip.py:236
+#: clip.py:237
 msgid "Text content:"
 msgstr "Text content:"
 
-#: clip.py:493
+#: clip.py:490
 msgid "Unpin"
 msgstr "Unpin"
 
-#: clip.py:446
+#: clip.py:443
 msgid "Unpinned"
 msgstr "Unpinned"

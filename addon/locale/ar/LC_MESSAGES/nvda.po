@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.9.9\n"
+"Project-Id-Version: ClipHistory 2026.11.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-05 09:21+0700\n"
+"POT-Creation-Date: 2026-11-06 10:46+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Arabic\n"
@@ -10,116 +10,116 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: clip.py:248
+#: clip.py:247
 msgid "&Cancel"
 msgstr "&إلغاء"
 
-#: clip.py:300
+#: clip.py:299
 msgid "&Close"
 msgstr "&إغلاق"
 
-#: clip.py:247
+#: clip.py:246
 msgid "&OK"
 msgstr "&موافق"
 
-#: clip.py:298
+#: clip.py:297
 msgid "&Paste"
 msgstr "&لصق"
 
-#: clip.py:483
+#: clip.py:484
 msgid "Clear All"
 msgstr "مسح الكل"
 
-#: clip.py:477
+#: clip.py:478
 msgid "Cleared all non-pinned items"
 msgstr "تم مسح جميع العناصر غير المثبتة"
 
-#: __init__.py:220
+#: clipCore.py:236
 msgid "Cleared {count} items"
 msgstr "تم مسح {count} عنصر"
 
-#: clip.py:278
+#: clip.py:277
 msgid "Clip History"
 msgstr "سجل الحافظة"
 
-#: clip.py:496
+#: clip.py:497
 msgid "Delete"
 msgstr "حذف"
 
-#: clip.py:413
+#: clip.py:408
 msgid "Deleted"
 msgstr "تم الحذف"
 
-#: clip.py:230
+#: clip.py:229
 msgid "Display name (optional):"
 msgstr "اسم العرض (اختياري):"
 
-#: clip.py:495
+#: clip.py:496
 msgid "Edit"
 msgstr "تحرير"
 
-#: clip.py:424
+#: clip.py:419
 msgid "Edit Item"
 msgstr "تحرير العنصر"
 
-#: clip.py:436
+#: clip.py:431
 msgid "Item edited"
 msgstr "تم تحرير العنصر"
 
-#: clip.py:493
+#: clip.py:494
 msgid "Move Down"
 msgstr "تحريك لأسفل"
 
-#: clip.py:492
+#: clip.py:493
 msgid "Move Up"
 msgstr "تحريك لأعلى"
 
-#: clip.py:472
+#: clip.py:467
 msgid "Moved down"
 msgstr "تم التحريك لأسفل"
 
-#: clip.py:460
+#: clip.py:455
 msgid "Moved up"
 msgstr "تم التحريك لأعلى"
 
-#: __init__.py:218
+#: clipCore.py:234
 msgid "No items to clear"
 msgstr "لا توجد عناصر لمسحها"
 
-#: __init__.py:229
+#: clipCore.py:245
 msgid "Opens clip history (single) clears all (double)"
 msgstr "فتح سجل الحافظة (نقرة واحدة) مسح الكل (نقرة مزدوجة)"
 
-#: clip.py:393
+#: clip.py:388
 msgid "Paste"
 msgstr "لصق"
 
-#: clip.py:405
+#: clip.py:400
 msgid "Pasted"
 msgstr "تم اللصق"
 
-#: clip.py:489
+#: clip.py:490
 msgid "Pin"
 msgstr "تثبيت"
 
-#: clip.py:448
+#: clip.py:443
 msgid "Pinned"
 msgstr "تم التثبيت"
 
-#: clip.py:294
+#: clip.py:293
 msgid "Text"
 msgstr "نص"
 
-#: clip.py:238
+#: clip.py:237
 msgid "Text content:"
 msgstr "محتوى النص:"
 
-#: clip.py:489
+#: clip.py:490
 msgid "Unpin"
 msgstr "إلغاء التثبيت"
 
-#: clip.py:448
+#: clip.py:443
 msgid "Unpinned"
 msgstr "تم إلغاء التثبيت"

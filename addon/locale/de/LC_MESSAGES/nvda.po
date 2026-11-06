@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.9.9\n"
+"Project-Id-Version: ClipHistory 2026.11.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-09-05 09:21+0700\n"
+"POT-Creation-Date: 2026-11-06 10:46+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: German\n"
@@ -10,116 +10,117 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: clip.py:248
+#: clip.py:247
 msgid "&Cancel"
 msgstr "&Abbrechen"
 
-#: clip.py:300
+#: clip.py:299
 msgid "&Close"
 msgstr "&Schließen"
 
-#: clip.py:247
+#: clip.py:246
 msgid "&OK"
 msgstr "&OK"
 
-#: clip.py:298
+#: clip.py:297
 msgid "&Paste"
 msgstr "&Einfügen"
 
-#: clip.py:483
+#: clip.py:484
 msgid "Clear All"
 msgstr "Alle löschen"
 
-#: clip.py:477
+#: clip.py:478
 msgid "Cleared all non-pinned items"
 msgstr "Alle nicht fixierten Elemente gelöscht"
 
-#: __init__.py:220
+#: clipCore.py:236
 msgid "Cleared {count} items"
 msgstr "{count} Elemente gelöscht"
 
-#: clip.py:278
+#: clip.py:277
 msgid "Clip History"
 msgstr "Zwischenablageverlauf"
 
-#: clip.py:496
+#: clip.py:497
 msgid "Delete"
 msgstr "Löschen"
 
-#: clip.py:413
+#: clip.py:408
 msgid "Deleted"
 msgstr "Gelöscht"
 
-#: clip.py:230
+#: clip.py:229
 msgid "Display name (optional):"
 msgstr "Anzeigename (optional):"
 
-#: clip.py:495
+#: clip.py:496
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: clip.py:424
+#: clip.py:419
 msgid "Edit Item"
 msgstr "Element bearbeiten"
 
-#: clip.py:436
+#: clip.py:431
 msgid "Item edited"
 msgstr "Element bearbeitet"
 
-#: clip.py:493
+#: clip.py:494
 msgid "Move Down"
 msgstr "Nach unten verschieben"
 
-#: clip.py:492
+#: clip.py:493
 msgid "Move Up"
 msgstr "Nach oben verschieben"
 
-#: clip.py:472
+#: clip.py:467
 msgid "Moved down"
 msgstr "Nach unten verschoben"
 
-#: clip.py:460
+#: clip.py:455
 msgid "Moved up"
 msgstr "Nach oben verschoben"
 
-#: __init__.py:218
+#: clipCore.py:234
 msgid "No items to clear"
 msgstr "Keine Elemente zum Löschen"
 
-#: __init__.py:229
+#: clipCore.py:245
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Öffnet den Zwischenablageverlauf (einfach) löscht alles (doppelt)"
 
-#: clip.py:393
+#: clip.py:388
 msgid "Paste"
 msgstr "Einfügen"
 
-#: clip.py:405
+#: clip.py:400
 msgid "Pasted"
 msgstr "Eingefügt"
 
-#: clip.py:489
+#: clip.py:490
 msgid "Pin"
 msgstr "Fixieren"
 
-#: clip.py:448
+#: clip.py:443
 msgid "Pinned"
 msgstr "Fixiert"
 
-#: clip.py:294
+#: clip.py:293
+# keep-identical
 msgid "Text"
 msgstr "Text"
 
-#: clip.py:238
+#: clip.py:237
 msgid "Text content:"
 msgstr "Textinhalt:"
 
-#: clip.py:489
+#: clip.py:490
 msgid "Unpin"
 msgstr "Fixierung aufheben"
 
-#: clip.py:448
+#: clip.py:443
 msgid "Unpinned"
 msgstr "Fixierung aufgehoben"
