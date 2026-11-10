@@ -13,6 +13,7 @@ import logging
 import time
 import ctypes
 import threading
+import shutil
 import speech
 
 from . import clipboard_utils
@@ -22,6 +23,20 @@ log = logging.getLogger(__name__)
 
 MAX_HISTORY_ITEMS = 500
 SAVE_DEBOUNCE_MS = 500
+COMPARE_CHUNK_BYTES = 64 * 1024
+
+
+def _files_identical(first_path, second_path):
+	if os.path.getsize(first_path) != os.path.getsize(second_path):
+		return False
+	with open(first_path, "rb") as first, open(second_path, "rb") as second:
+		while True:
+			first_chunk = first.read(COMPARE_CHUNK_BYTES)
+			if first_chunk != second.read(COMPARE_CHUNK_BYTES):
+				return False
+			if not first_chunk:
+				return True
+
 
 class ClipHistoryManager:
 	_is_saving = False
@@ -29,15 +44,76 @@ class ClipHistoryManager:
 
 	def __init__(self):
 		self.data_path = self._get_data_path()
+		self.settings_path = self._get_settings_path()
+		self.enter_loads_only = False
+		self._load_settings()
 		self.items = []
 		self._items_lock = threading.RLock()
 		self._load_async()
 
+	def _get_addon_dir(self):
+		return os.path.join(globalVars.appArgs.configPath, "ChaiChaimee", "ClipHistory")
+
 	def _get_data_path(self):
-		config_dir = os.path.join(globalVars.appArgs.configPath, "ChaiChaimee")
-		if not os.path.exists(config_dir):
-			os.makedirs(config_dir)
-		return os.path.join(config_dir, "ClipHistory.json")
+		addon_dir = self._get_addon_dir()
+		os.makedirs(addon_dir, exist_ok=True)
+		data_path = os.path.join(addon_dir, "ClipHistory.json")
+		self._migrate_legacy_history(data_path)
+		return data_path
+
+	def _migrate_legacy_history(self, data_path):
+		legacy_path = os.path.join(os.path.dirname(self._get_addon_dir()), "ClipHistory.json")
+		if not os.path.isfile(legacy_path):
+			return
+		temp_path = f"{data_path}.migrate.tmp"
+		try:
+			if os.path.exists(data_path):
+				if _files_identical(legacy_path, data_path):
+					os.remove(legacy_path)
+					log.info("Legacy history file matched the new one and was removed")
+				else:
+					log.warning("Legacy history file differs from the new one; both kept")
+				return
+			shutil.copyfile(legacy_path, temp_path)
+			if not _files_identical(legacy_path, temp_path):
+				raise OSError("copy verification failed")
+			os.replace(temp_path, data_path)
+			os.remove(legacy_path)
+			log.info(f"Moved history from {legacy_path} to {data_path}")
+		except OSError as e:
+			log.error(f"History migration failed, legacy file kept: {e}")
+			if os.path.exists(temp_path):
+				try:
+					os.remove(temp_path)
+				except OSError:
+					log.warning("Could not remove temporary migration file")
+
+	def _get_settings_path(self):
+		return os.path.join(self._get_addon_dir(), "settings.json")
+
+	def _load_settings(self):
+		try:
+			if not os.path.exists(self.settings_path):
+				return
+			with open(self.settings_path, "r", encoding="utf-8") as f:
+				loaded = json.load(f)
+			if isinstance(loaded, dict):
+				self.enter_loads_only = loaded.get("enterLoadsOnly") is True
+		except (OSError, ValueError) as e:
+			log.warning(f"Failed to load settings: {e}")
+
+	def set_enter_loads_only(self, value):
+		self.enter_loads_only = bool(value)
+		temp_path = f"{self.settings_path}.tmp"
+		try:
+			os.makedirs(os.path.dirname(self.settings_path), exist_ok=True)
+			with open(temp_path, "w", encoding="utf-8") as f:
+				json.dump({"enterLoadsOnly": self.enter_loads_only}, f, indent=2)
+				f.flush()
+				os.fsync(f.fileno())
+			os.replace(temp_path, self.settings_path)
+		except OSError as e:
+			log.error(f"Failed to save settings: {e}")
 
 	def _load_async(self):
 		def _do_load():
@@ -293,6 +369,11 @@ class ClipHistoryDialog(wx.Dialog):
 		self.list_ctrl.InsertColumn(0, _("Text"), width=550)
 		sizer.Add(self.list_ctrl, 1, wx.EXPAND | wx.ALL, 5)
 
+		self.enter_loads_chk = wx.CheckBox(panel, label=_("Enter key &loads clipboard without pasting"))
+		self.enter_loads_chk.SetValue(self.manager.enter_loads_only)
+		self.enter_loads_chk.Bind(wx.EVT_CHECKBOX, self.on_toggle_enter_loads)
+		sizer.Add(self.enter_loads_chk, 0, wx.ALL, 5)
+
 		btn_sizer = wx.BoxSizer(wx.HORIZONTAL)
 		self.paste_btn = wx.Button(panel, label=_("&Paste"))
 		self.paste_btn.Bind(wx.EVT_BUTTON, self.on_paste)
@@ -305,7 +386,7 @@ class ClipHistoryDialog(wx.Dialog):
 
 		self.list_ctrl.Bind(wx.EVT_LIST_ITEM_RIGHT_CLICK, self.on_context_menu)
 		self.list_ctrl.Bind(wx.EVT_CONTEXT_MENU, self.on_context_menu)
-		self.list_ctrl.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.on_paste)
+		self.list_ctrl.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.on_activate)
 
 	def update_list(self):
 		selected_data_idx = self.get_selected_index()
@@ -357,10 +438,10 @@ class ClipHistoryDialog(wx.Dialog):
 			self.list_ctrl.Focus(idx)
 			self.list_ctrl.EnsureVisible(idx)
 
-	def on_paste(self, event):
+	def _put_selected_on_clipboard(self):
 		idx = self.get_selected_index()
 		if idx is None:
-			return
+			return None
 
 		if idx != 0:
 			self.manager.move_to_top(idx)
@@ -374,10 +455,34 @@ class ClipHistoryDialog(wx.Dialog):
 
 		self.plugin.suppress_clipboard_next()
 		self.plugin.last_clipboard_text = text
-		clipboard_utils.set_clipboard_data(text, html)
+		return clipboard_utils.set_clipboard_data(text, html)
+
+	def on_activate(self, event):
+		if self.manager.enter_loads_only:
+			self.on_load(event)
+		else:
+			self.on_paste(event)
+
+	def on_toggle_enter_loads(self, event):
+		self.manager.set_enter_loads_only(self.enter_loads_chk.GetValue())
+
+	def on_paste(self, event):
+		if self._put_selected_on_clipboard() is None:
+			return
 
 		self.Hide()
 		core.callLater(50, self._paste_and_close)
+
+	def on_load(self, event):
+		loaded = self._put_selected_on_clipboard()
+		if loaded is None:
+			return
+		if not loaded:
+			ui.message(_("Could not load the item to the clipboard"))
+			return
+
+		wx.CallAfter(self.Close)
+		core.callLater(150, ui.message, _("Loaded to clipboard"))
 
 	def _paste_and_close(self):
 		speech.cancelSpeech()
@@ -480,6 +585,11 @@ class ClipHistoryDialog(wx.Dialog):
 	def on_context_menu(self, event):
 		idx = self.get_selected_index()
 		menu = wx.Menu()
+
+		if idx is not None:
+			load_item = menu.Append(wx.ID_ANY, _("Load to Clipboard (no paste)"))
+			self.Bind(wx.EVT_MENU, self.on_load, load_item)
+			menu.AppendSeparator()
 
 		clear_all_item = menu.Append(wx.ID_ANY, _("Clear All"))
 		self.Bind(wx.EVT_MENU, self.on_clear_all, clear_all_item)
