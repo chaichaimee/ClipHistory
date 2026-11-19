@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Russian\n"
@@ -28,7 +28,7 @@ msgstr "&ОК"
 msgid "&Paste"
 msgstr "&Вставить"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "Очистить всё"
 
@@ -36,7 +36,7 @@ msgstr "Очистить всё"
 msgid "Cleared all non-pinned items"
 msgstr "Очищены все незакрепленные элементы"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "Очищено {count} элементов"
 
@@ -48,7 +48,7 @@ msgstr "История буфера обмена"
 msgid "Could not load the item to the clipboard"
 msgstr "Не удалось загрузить элемент в буфер обмена"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "Удалить"
 
@@ -60,7 +60,7 @@ msgstr "Удалено"
 msgid "Display name (optional):"
 msgstr "Отображаемое имя (необязательно):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "Изменить"
 
@@ -76,7 +76,7 @@ msgstr "Клавиша Enter &загружает в буфер обмена бе
 msgid "Item edited"
 msgstr "Элемент изменен"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "Загрузить в буфер обмена (без вставки)"
 
@@ -84,11 +84,11 @@ msgstr "Загрузить в буфер обмена (без вставки)"
 msgid "Loaded to clipboard"
 msgstr "Загружено в буфер обмена"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "Переместить вниз"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "Переместить вверх"
 
@@ -100,11 +100,11 @@ msgstr "Перемещено вниз"
 msgid "Moved up"
 msgstr "Перемещено вверх"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "Нет элементов для очистки"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Открыть историю (одинарный) очистить всё (двойной)"
 
@@ -116,7 +116,7 @@ msgstr "Вставить"
 msgid "Pasted"
 msgstr "Вставлено"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "Закрепить"
 
@@ -132,7 +132,7 @@ msgstr "Текст"
 msgid "Text content:"
 msgstr "Текстовое содержимое:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "Открепить"
 

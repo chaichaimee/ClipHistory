@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Spanish\n"
@@ -28,7 +28,7 @@ msgstr "&Aceptar"
 msgid "&Paste"
 msgstr "&Pegar"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "Borrar todo"
 
@@ -36,7 +36,7 @@ msgstr "Borrar todo"
 msgid "Cleared all non-pinned items"
 msgstr "Se borraron todos los elementos no fijados"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "Se borraron {count} elementos"
 
@@ -48,7 +48,7 @@ msgstr "Historial del portapapeles"
 msgid "Could not load the item to the clipboard"
 msgstr "No se pudo cargar el elemento en el portapapeles"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -60,7 +60,7 @@ msgstr "Eliminado"
 msgid "Display name (optional):"
 msgstr "Nombre de visualización (opcional):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "Editar"
 
@@ -76,7 +76,7 @@ msgstr "Tecla &Intro carga el portapapeles sin pegar"
 msgid "Item edited"
 msgstr "Elemento editado"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "Cargar en el portapapeles (sin pegar)"
 
@@ -84,11 +84,11 @@ msgstr "Cargar en el portapapeles (sin pegar)"
 msgid "Loaded to clipboard"
 msgstr "Copiado al portapapeles"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "Mover hacia abajo"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "Mover hacia arriba"
 
@@ -100,11 +100,11 @@ msgstr "Movido hacia abajo"
 msgid "Moved up"
 msgstr "Movido hacia arriba"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "No hay elementos para borrar"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Abre el historial del portapapeles (clic simple) borra todo (clic doble)"
 
@@ -116,7 +116,7 @@ msgstr "Pegar"
 msgid "Pasted"
 msgstr "Pegado"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "Fijar"
 
@@ -132,7 +132,7 @@ msgstr "Texto"
 msgid "Text content:"
 msgstr "Contenido del texto:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "Desfijar"
 

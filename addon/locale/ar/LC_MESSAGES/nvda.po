@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Arabic\n"
@@ -28,7 +28,7 @@ msgstr "&موافق"
 msgid "&Paste"
 msgstr "&لصق"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "مسح الكل"
 
@@ -36,7 +36,7 @@ msgstr "مسح الكل"
 msgid "Cleared all non-pinned items"
 msgstr "تم مسح جميع العناصر غير المثبتة"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "تم مسح {count} عنصر"
 
@@ -48,7 +48,7 @@ msgstr "سجل الحافظة"
 msgid "Could not load the item to the clipboard"
 msgstr "تعذر تحميل العنصر إلى الحافظة"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "حذف"
 
@@ -60,7 +60,7 @@ msgstr "تم الحذف"
 msgid "Display name (optional):"
 msgstr "اسم العرض (اختياري):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "تحرير"
 
@@ -76,7 +76,7 @@ msgstr "مفتاح الإدخال &يحمل الحافظة دون لصق"
 msgid "Item edited"
 msgstr "تم تحرير العنصر"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "تحميل إلى الحافظة (بدون لصق)"
 
@@ -84,11 +84,11 @@ msgstr "تحميل إلى الحافظة (بدون لصق)"
 msgid "Loaded to clipboard"
 msgstr "تم التحميل إلى الحافظة"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "تحريك لأسفل"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "تحريك لأعلى"
 
@@ -100,11 +100,11 @@ msgstr "تم التحريك لأسفل"
 msgid "Moved up"
 msgstr "تم التحريك لأعلى"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "لا توجد عناصر لمسحها"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "فتح سجل الحافظة (نقرة واحدة) مسح الكل (نقرة مزدوجة)"
 
@@ -116,7 +116,7 @@ msgstr "لصق"
 msgid "Pasted"
 msgstr "تم اللصق"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "تثبيت"
 
@@ -132,7 +132,7 @@ msgstr "نص"
 msgid "Text content:"
 msgstr "محتوى النص:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "إلغاء التثبيت"
 

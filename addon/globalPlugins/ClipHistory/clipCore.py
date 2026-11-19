@@ -8,6 +8,8 @@ import ui
 import api
 import core
 import scriptHandler
+import controlTypes
+import keyboardHandler
 import time
 import logging
 import ctypes
@@ -241,6 +243,34 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		finally:
 			self._tap_count = 0
 			self._tap_timer = None
+
+	def event_gainFocus(self, obj, nextHandler):
+		# When the ClipHistory context menu opens, NVDA announces "Context menu"
+		# and nothing is selected. Suppress that and move to the first item so
+		# its name is spoken instead.
+		try:
+			dlg = self.dialog
+			if (
+				dlg
+				and dlg.IsShown()
+				and obj.role == controlTypes.Role.POPUPMENU
+				and obj.windowClassName == "#32768"
+				and not getattr(self, "_menuPrimed", False)
+			):
+				self._menuPrimed = True
+				def _selectFirst():
+					try:
+						keyboardHandler.KeyboardInputGesture.fromName("downArrow").send()
+					finally:
+						core.callLater(300, self._resetMenuPrimed)
+				core.callLater(0, _selectFirst)
+				return
+		except Exception:
+			log.exception("context menu focus hook failed")
+		nextHandler()
+
+	def _resetMenuPrimed(self):
+		self._menuPrimed = False
 
 	@scriptHandler.script(gesture="kb:windows+v", description=_("Opens clip history (single) clears all (double)"))
 	def script_openClipHistory(self, gesture):

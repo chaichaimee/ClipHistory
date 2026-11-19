@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: German\n"
@@ -28,7 +28,7 @@ msgstr "&OK"
 msgid "&Paste"
 msgstr "&Einfügen"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "Alle löschen"
 
@@ -36,7 +36,7 @@ msgstr "Alle löschen"
 msgid "Cleared all non-pinned items"
 msgstr "Alle nicht fixierten Elemente gelöscht"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "{count} Elemente gelöscht"
 
@@ -48,7 +48,7 @@ msgstr "Zwischenablageverlauf"
 msgid "Could not load the item to the clipboard"
 msgstr "Element konnte nicht in die Zwischenablage geladen werden"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "Löschen"
 
@@ -60,7 +60,7 @@ msgstr "Gelöscht"
 msgid "Display name (optional):"
 msgstr "Anzeigename (optional):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -76,7 +76,7 @@ msgstr "Eingabetaste lädt Zwischenablage ohne einzufügen"
 msgid "Item edited"
 msgstr "Element bearbeitet"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "In Zwischenablage laden (nicht einfügen)"
 
@@ -84,11 +84,11 @@ msgstr "In Zwischenablage laden (nicht einfügen)"
 msgid "Loaded to clipboard"
 msgstr "In Zwischenablage geladen"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "Nach unten verschieben"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "Nach oben verschieben"
 
@@ -100,11 +100,11 @@ msgstr "Nach unten verschoben"
 msgid "Moved up"
 msgstr "Nach oben verschoben"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "Keine Elemente zum Löschen"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Öffnet den Zwischenablageverlauf (einfach) löscht alles (doppelt)"
 
@@ -116,7 +116,7 @@ msgstr "Einfügen"
 msgid "Pasted"
 msgstr "Eingefügt"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "Fixieren"
 
@@ -133,7 +133,7 @@ msgstr "Text"
 msgid "Text content:"
 msgstr "Textinhalt:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "Fixierung aufheben"
 

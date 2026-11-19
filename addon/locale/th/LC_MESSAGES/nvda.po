@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Thai\n"
@@ -28,7 +28,7 @@ msgstr "&ตกลง"
 msgid "&Paste"
 msgstr "&วาง"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "ล้างทั้งหมด"
 
@@ -36,7 +36,7 @@ msgstr "ล้างทั้งหมด"
 msgid "Cleared all non-pinned items"
 msgstr "ล้างรายการที่ไม่ได้ปักหมุดทั้งหมดแล้ว"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "ล้างรายการ {count} รายการแล้ว"
 
@@ -48,7 +48,7 @@ msgstr "ประวัติคลิปบอร์ด"
 msgid "Could not load the item to the clipboard"
 msgstr "ไม่สามารถโหลดรายการไปยังคลิปบอร์ดได้"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "ลบ"
 
@@ -60,7 +60,7 @@ msgstr "ลบแล้ว"
 msgid "Display name (optional):"
 msgstr "ชื่อที่แสดง (เลือกได้):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "แก้ไข"
 
@@ -76,7 +76,7 @@ msgstr "กดปุ่ม Enter โหลดเนื้อหาในคล�
 msgid "Item edited"
 msgstr "แก้ไขรายการแล้ว"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "โหลดไปยังคลิปบอร์ด (ไม่ต้องวาง)"
 
@@ -84,11 +84,11 @@ msgstr "โหลดไปยังคลิปบอร์ด (ไม่ต้�
 msgid "Loaded to clipboard"
 msgstr "คัดลอกไปยังคลิปบอร์ดแล้ว"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "ย้ายลง"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "ย้ายขึ้น"
 
@@ -100,11 +100,11 @@ msgstr "ย้ายลงแล้ว"
 msgid "Moved up"
 msgstr "ย้ายขึ้นแล้ว"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "ไม่มีรายการให้ล้าง"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "เปิดประวัติคลิป (คลิกเดียว) ล้างทั้งหมด (ดับเบิลคลิก)"
 
@@ -116,7 +116,7 @@ msgstr "วาง"
 msgid "Pasted"
 msgstr "วางแล้ว"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "ปักหมุด"
 
@@ -132,7 +132,7 @@ msgstr "ข้อความ"
 msgid "Text content:"
 msgstr "เนื้อหาข้อความ:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "เลิกปักหมุด"
 

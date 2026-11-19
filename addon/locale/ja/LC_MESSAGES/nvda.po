@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Japanese\n"
@@ -28,7 +28,7 @@ msgstr "OK(&O)"
 msgid "&Paste"
 msgstr "貼り付け(&P)"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "すべてクリア"
 
@@ -36,7 +36,7 @@ msgstr "すべてクリア"
 msgid "Cleared all non-pinned items"
 msgstr "固定されていないすべてのアイテムをクリアしました"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "{count} 個のアイテムをクリアしました"
 
@@ -48,7 +48,7 @@ msgstr "クリップ履歴"
 msgid "Could not load the item to the clipboard"
 msgstr "クリップボードに項目を読み込めませんでした"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "削除"
 
@@ -60,7 +60,7 @@ msgstr "削除しました"
 msgid "Display name (optional):"
 msgstr "表示名 (オプション):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "編集"
 
@@ -76,7 +76,7 @@ msgstr "&Enterキーで貼り付けずにクリップボードに読み込む"
 msgid "Item edited"
 msgstr "アイテムを編集しました"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "クリップボードに読み込む (貼り付けない)"
 
@@ -84,11 +84,11 @@ msgstr "クリップボードに読み込む (貼り付けない)"
 msgid "Loaded to clipboard"
 msgstr "クリップボードに読み込みました"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "下に移動"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "上に移動"
 
@@ -100,11 +100,11 @@ msgstr "下に移動しました"
 msgid "Moved up"
 msgstr "上に移動しました"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "クリアするアイテムはありません"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "クリップ履歴を開く (シングル) すべてクリア (ダブル)"
 
@@ -116,7 +116,7 @@ msgstr "貼り付け"
 msgid "Pasted"
 msgstr "貼り付けました"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "固定"
 
@@ -132,7 +132,7 @@ msgstr "テキスト"
 msgid "Text content:"
 msgstr "テキスト内容:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "固定を解除"
 

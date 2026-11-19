@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Korean\n"
@@ -28,7 +28,7 @@ msgstr "확인(&O)"
 msgid "&Paste"
 msgstr "붙여넣기(&P)"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "모두 지우기"
 
@@ -36,7 +36,7 @@ msgstr "모두 지우기"
 msgid "Cleared all non-pinned items"
 msgstr "고정되지 않은 모든 항목을 지웠습니다"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "{count}개의 항목을 지웠습니다"
 
@@ -48,7 +48,7 @@ msgstr "클립 내역"
 msgid "Could not load the item to the clipboard"
 msgstr "항목을 클립보드에 로드할 수 없습니다."
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "삭제"
 
@@ -60,7 +60,7 @@ msgstr "삭제됨"
 msgid "Display name (optional):"
 msgstr "표시 이름 (선택 사항):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "편집"
 
@@ -76,7 +76,7 @@ msgstr "엔터 키(&L)로 붙여넣지 않고 클립보드에 로드"
 msgid "Item edited"
 msgstr "항목이 편집됨"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "클립보드로 로드 (붙여넣기 안 함)"
 
@@ -84,11 +84,11 @@ msgstr "클립보드로 로드 (붙여넣기 안 함)"
 msgid "Loaded to clipboard"
 msgstr "클립보드에 로드됨"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "아래로 이동"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "위로 이동"
 
@@ -100,11 +100,11 @@ msgstr "아래로 이동됨"
 msgid "Moved up"
 msgstr "위로 이동됨"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "지울 항목이 없습니다"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "클립 내역 열기 (단일 클릭) 모두 지우기 (더블 클릭)"
 
@@ -116,7 +116,7 @@ msgstr "붙여넣기"
 msgid "Pasted"
 msgstr "붙여넣음"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "고정"
 
@@ -132,7 +132,7 @@ msgstr "텍스트"
 msgid "Text content:"
 msgstr "텍스트 내용:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "고정 해제"
 

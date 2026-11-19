@@ -587,22 +587,12 @@ class ClipHistoryDialog(wx.Dialog):
 		menu = wx.Menu()
 
 		if idx is not None:
-			load_item = menu.Append(wx.ID_ANY, _("Load to Clipboard (no paste)"))
-			self.Bind(wx.EVT_MENU, self.on_load, load_item)
-			menu.AppendSeparator()
-
-		clear_all_item = menu.Append(wx.ID_ANY, _("Clear All"))
-		self.Bind(wx.EVT_MENU, self.on_clear_all, clear_all_item)
-
-		if idx is not None:
-			menu.AppendSeparator()
+			# Order: Pin/Unpin, Move Up, Move Down, Edit, Delete, Clear All, Load to Clipboard
 			is_pinned = self.manager.items[idx].get("pinned", False)
 			pin_label = _("Unpin") if is_pinned else _("Pin")
 			pin_item = menu.Append(wx.ID_ANY, pin_label)
-			menu.AppendSeparator()
 			move_up_item = menu.Append(wx.ID_ANY, _("Move Up"))
 			move_down_item = menu.Append(wx.ID_ANY, _("Move Down"))
-			menu.AppendSeparator()
 			edit_item = menu.Append(wx.ID_ANY, _("Edit"))
 			delete_item = menu.Append(wx.ID_ANY, _("Delete"))
 
@@ -611,6 +601,13 @@ class ClipHistoryDialog(wx.Dialog):
 			self.Bind(wx.EVT_MENU, self.on_move_down, move_down_item)
 			self.Bind(wx.EVT_MENU, self.on_edit, edit_item)
 			self.Bind(wx.EVT_MENU, self.on_delete, delete_item)
+
+		clear_all_item = menu.Append(wx.ID_ANY, _("Clear All"))
+		self.Bind(wx.EVT_MENU, self.on_clear_all, clear_all_item)
+
+		if idx is not None:
+			load_item = menu.Append(wx.ID_ANY, _("Load to Clipboard (no paste)"))
+			self.Bind(wx.EVT_MENU, self.on_load, load_item)
 
 		self.list_ctrl.PopupMenu(menu)
 		menu.Destroy()

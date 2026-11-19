@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Ukrainian\n"
@@ -28,7 +28,7 @@ msgstr "&ОК"
 msgid "&Paste"
 msgstr "&Вставити"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "Очистити все"
 
@@ -36,7 +36,7 @@ msgstr "Очистити все"
 msgid "Cleared all non-pinned items"
 msgstr "Очищено всі незакріплені елементи"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "Очищено {count} елементів"
 
@@ -48,7 +48,7 @@ msgstr "Історія буфера обміну"
 msgid "Could not load the item to the clipboard"
 msgstr "Не вдалося завантажити елемент до буфера обміну"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "Видалити"
 
@@ -60,7 +60,7 @@ msgstr "Видалено"
 msgid "Display name (optional):"
 msgstr "Відображуване ім'я (необов'язково):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "Редагувати"
 
@@ -76,7 +76,7 @@ msgstr "Клавіша Enter &завантажує буфер обміну бе�
 msgid "Item edited"
 msgstr "Елемент відредаговано"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "Завантажити до буфера обміну (без вставлення)"
 
@@ -84,11 +84,11 @@ msgstr "Завантажити до буфера обміну (без встав
 msgid "Loaded to clipboard"
 msgstr "Завантажено до буфера обміну"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "Перемістити вниз"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "Перемістити вгору"
 
@@ -100,11 +100,11 @@ msgstr "Переміщено вниз"
 msgid "Moved up"
 msgstr "Переміщено вгору"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "Немає елементів для очищення"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Відкрити історію (одинарний) очистити все (подвійний)"
 
@@ -116,7 +116,7 @@ msgstr "Вставити"
 msgid "Pasted"
 msgstr "Вставлено"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "Закріпити"
 
@@ -132,7 +132,7 @@ msgstr "Текст"
 msgid "Text content:"
 msgstr "Текстовий вміст:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "Відкріпити"
 

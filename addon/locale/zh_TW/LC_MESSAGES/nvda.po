@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Chinese (Traditional)\n"
@@ -28,7 +28,7 @@ msgstr "確定(&O)"
 msgid "&Paste"
 msgstr "貼上(&P)"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "全部清除"
 
@@ -36,7 +36,7 @@ msgstr "全部清除"
 msgid "Cleared all non-pinned items"
 msgstr "已清除所有未固定的項目"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "已清除 {count} 個項目"
 
@@ -48,7 +48,7 @@ msgstr "剪貼簿歷史"
 msgid "Could not load the item to the clipboard"
 msgstr "無法將項目載入剪貼簿"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "刪除"
 
@@ -60,7 +60,7 @@ msgstr "已刪除"
 msgid "Display name (optional):"
 msgstr "顯示名稱（選填）："
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "編輯"
 
@@ -76,7 +76,7 @@ msgstr "Enter 鍵僅載入剪貼簿而不貼上"
 msgid "Item edited"
 msgstr "已編輯項目"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "載入至剪貼簿 (不貼上)"
 
@@ -84,11 +84,11 @@ msgstr "載入至剪貼簿 (不貼上)"
 msgid "Loaded to clipboard"
 msgstr "已載入至剪貼簿"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "下移"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "上移"
 
@@ -100,11 +100,11 @@ msgstr "已下移"
 msgid "Moved up"
 msgstr "已上移"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "沒有可清除的項目"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "開啟剪貼簿歷史（單擊）清除全部（雙擊）"
 
@@ -116,7 +116,7 @@ msgstr "貼上"
 msgid "Pasted"
 msgstr "已貼上"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "固定"
 
@@ -132,7 +132,7 @@ msgstr "文字"
 msgid "Text content:"
 msgstr "文字內容："
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "取消固定"
 

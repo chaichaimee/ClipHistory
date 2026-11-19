@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Portuguese (Brazil)\n"
@@ -28,7 +28,7 @@ msgstr "&OK"
 msgid "&Paste"
 msgstr "&Colar"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "Limpar tudo"
 
@@ -36,7 +36,7 @@ msgstr "Limpar tudo"
 msgid "Cleared all non-pinned items"
 msgstr "Limpos todos os itens não fixados"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "{count} itens limpos"
 
@@ -48,7 +48,7 @@ msgstr "Histórico da área de transferência"
 msgid "Could not load the item to the clipboard"
 msgstr "Não foi possível carregar o item para a área de transferência"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "Excluir"
 
@@ -60,7 +60,7 @@ msgstr "Excluído"
 msgid "Display name (optional):"
 msgstr "Nome de exibição (opcional):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "Editar"
 
@@ -76,7 +76,7 @@ msgstr "Pressionar &Enter carrega a área de transferência sem colar"
 msgid "Item edited"
 msgstr "Item editado"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "Carregar para a área de transferência (sem colar)"
 
@@ -84,11 +84,11 @@ msgstr "Carregar para a área de transferência (sem colar)"
 msgid "Loaded to clipboard"
 msgstr "Copiado para a área de transferência"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "Mover para baixo"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "Mover para cima"
 
@@ -100,11 +100,11 @@ msgstr "Movido para baixo"
 msgid "Moved up"
 msgstr "Movido para cima"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "Sem itens para limpar"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Abre o histórico (clique único) limpa tudo (clique duplo)"
 
@@ -116,7 +116,7 @@ msgstr "Colar"
 msgid "Pasted"
 msgstr "Colado"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "Fixar"
 
@@ -132,7 +132,7 @@ msgstr "Texto"
 msgid "Text content:"
 msgstr "Conteúdo do texto:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "Desfixar"
 

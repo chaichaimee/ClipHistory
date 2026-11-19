@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Hindi\n"
@@ -28,7 +28,7 @@ msgstr "&ठीक है"
 msgid "&Paste"
 msgstr "&पेस्ट करें"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "सभी साफ़ करें"
 
@@ -36,7 +36,7 @@ msgstr "सभी साफ़ करें"
 msgid "Cleared all non-pinned items"
 msgstr "सभी पिन न किए गए आइटम हटा दिए गए"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "{count} आइटम हटा दिए गए"
 
@@ -48,7 +48,7 @@ msgstr "क्लिप इतिहास"
 msgid "Could not load the item to the clipboard"
 msgstr "आइटम को क्लिपबोर्ड पर लोड नहीं किया जा सका"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "हटाएं"
 
@@ -60,7 +60,7 @@ msgstr "हटाया गया"
 msgid "Display name (optional):"
 msgstr "प्रदर्शन नाम (वैकल्पिक):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "संपादित करें"
 
@@ -76,7 +76,7 @@ msgstr "Enter कुंजी पेस्ट किए बिना क्ल�
 msgid "Item edited"
 msgstr "आइटम संपादित किया गया"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "क्लिपबोर्ड पर लोड करें (पेस्ट न करें)"
 
@@ -84,11 +84,11 @@ msgstr "क्लिपबोर्ड पर लोड करें (पेस�
 msgid "Loaded to clipboard"
 msgstr "क्लिपबोर्ड पर लोड हो गया"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "नीचे ले जाएं"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "ऊपर ले जाएं"
 
@@ -100,11 +100,11 @@ msgstr "नीचे ले जाया गया"
 msgid "Moved up"
 msgstr "ऊपर ले जाया गया"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "साफ़ करने के लिए कोई आइटम नहीं है"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "क्लिप इतिहास खोलें (एकल) सभी साफ़ करें (डबल)"
 
@@ -116,7 +116,7 @@ msgstr "पेस्ट करें"
 msgid "Pasted"
 msgstr "पेस्ट किया गया"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "पिन करें"
 
@@ -132,7 +132,7 @@ msgstr "टेक्स्ट"
 msgid "Text content:"
 msgstr "टेक्स्ट सामग्री:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "पिन हटाएं"
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: French\n"
@@ -28,7 +28,7 @@ msgstr "&OK"
 msgid "&Paste"
 msgstr "&Coller"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "Tout effacer"
 
@@ -36,7 +36,7 @@ msgstr "Tout effacer"
 msgid "Cleared all non-pinned items"
 msgstr "Tous les éléments non épinglés ont été effacés"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "{count} éléments effacés"
 
@@ -48,7 +48,7 @@ msgstr "Historique du presse-papiers"
 msgid "Could not load the item to the clipboard"
 msgstr "Impossible de charger l'élément dans le presse-papiers"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -60,7 +60,7 @@ msgstr "Supprimé"
 msgid "Display name (optional):"
 msgstr "Nom d'affichage (facultatif) :"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "Modifier"
 
@@ -76,7 +76,7 @@ msgstr "La touche Entrée &charge le presse-papiers sans coller"
 msgid "Item edited"
 msgstr "Élément modifié"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "Charger dans le presse-papiers (sans coller)"
 
@@ -84,11 +84,11 @@ msgstr "Charger dans le presse-papiers (sans coller)"
 msgid "Loaded to clipboard"
 msgstr "Copié dans le presse-papiers"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "Déplacer vers le bas"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "Déplacer vers le haut"
 
@@ -100,11 +100,11 @@ msgstr "Déplacé vers le bas"
 msgid "Moved up"
 msgstr "Déplacé vers le haut"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "Aucun élément à effacer"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Ouvre l'historique (simple) efface tout (double)"
 
@@ -116,7 +116,7 @@ msgstr "Coller"
 msgid "Pasted"
 msgstr "Collé"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "Épingler"
 
@@ -132,7 +132,7 @@ msgstr "Texte"
 msgid "Text content:"
 msgstr "Contenu du texte :"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "Désépingler"
 

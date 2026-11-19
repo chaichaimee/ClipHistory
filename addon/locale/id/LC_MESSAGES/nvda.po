@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Indonesian\n"
@@ -28,7 +28,7 @@ msgstr "&OK"
 msgid "&Paste"
 msgstr "&Tempel"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "Bersihkan Semua"
 
@@ -36,7 +36,7 @@ msgstr "Bersihkan Semua"
 msgid "Cleared all non-pinned items"
 msgstr "Semua item yang tidak disematkan telah dibersihkan"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "{count} item telah dibersihkan"
 
@@ -48,7 +48,7 @@ msgstr "Riwayat Klip"
 msgid "Could not load the item to the clipboard"
 msgstr "Gagal memuat item ke papan klip"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "Hapus"
 
@@ -60,7 +60,7 @@ msgstr "Dihapus"
 msgid "Display name (optional):"
 msgstr "Nama tampilan (opsional):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "Ubah"
 
@@ -76,7 +76,7 @@ msgstr "Tombol Enter &memuat papan klip tanpa menempel"
 msgid "Item edited"
 msgstr "Item diedit"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "Muat ke Papan Klip (tanpa tempel)"
 
@@ -84,11 +84,11 @@ msgstr "Muat ke Papan Klip (tanpa tempel)"
 msgid "Loaded to clipboard"
 msgstr "Dimuat ke papan klip"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "Pindah ke Bawah"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "Pindah ke Atas"
 
@@ -100,11 +100,11 @@ msgstr "Dipindahkan ke bawah"
 msgid "Moved up"
 msgstr "Dipindahkan ke atas"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "Tidak ada item untuk dibersihkan"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Buka riwayat klip (klik tunggal) bersihkan semua (klik ganda)"
 
@@ -116,7 +116,7 @@ msgstr "Tempel"
 msgid "Pasted"
 msgstr "Ditempel"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "Sematkan"
 
@@ -132,7 +132,7 @@ msgstr "Teks"
 msgid "Text content:"
 msgstr "Isi teks:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "Lepas Sematan"
 

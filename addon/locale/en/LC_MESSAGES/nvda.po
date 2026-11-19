@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ClipHistory 2026.11.1\n"
+"Project-Id-Version: ClipHistory 2026.11.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-11-10 15:45+0700\n"
+"POT-Creation-Date: 2026-11-19 09:37+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -28,7 +28,7 @@ msgstr "&OK"
 msgid "&Paste"
 msgstr "&Paste"
 
-#: clip.py:594
+#: clip.py:605
 msgid "Clear All"
 msgstr "Clear All"
 
@@ -36,7 +36,7 @@ msgstr "Clear All"
 msgid "Cleared all non-pinned items"
 msgstr "Cleared all non-pinned items"
 
-#: clipCore.py:236
+#: clipCore.py:238
 msgid "Cleared {count} items"
 msgstr "Cleared {count} items"
 
@@ -48,7 +48,7 @@ msgstr "Clip History"
 msgid "Could not load the item to the clipboard"
 msgstr "Could not load the item to the clipboard"
 
-#: clip.py:607
+#: clip.py:597
 msgid "Delete"
 msgstr "Delete"
 
@@ -60,7 +60,7 @@ msgstr "Deleted"
 msgid "Display name (optional):"
 msgstr "Display name (optional):"
 
-#: clip.py:606
+#: clip.py:596
 msgid "Edit"
 msgstr "Edit"
 
@@ -76,7 +76,7 @@ msgstr "Enter key &loads clipboard without pasting"
 msgid "Item edited"
 msgstr "Item edited"
 
-#: clip.py:590
+#: clip.py:609
 msgid "Load to Clipboard (no paste)"
 msgstr "Load to Clipboard (no paste)"
 
@@ -84,11 +84,11 @@ msgstr "Load to Clipboard (no paste)"
 msgid "Loaded to clipboard"
 msgstr "Loaded to clipboard"
 
-#: clip.py:604
+#: clip.py:595
 msgid "Move Down"
 msgstr "Move Down"
 
-#: clip.py:603
+#: clip.py:594
 msgid "Move Up"
 msgstr "Move Up"
 
@@ -100,11 +100,11 @@ msgstr "Moved down"
 msgid "Moved up"
 msgstr "Moved up"
 
-#: clipCore.py:234
+#: clipCore.py:236
 msgid "No items to clear"
 msgstr "No items to clear"
 
-#: clipCore.py:245
+#: clipCore.py:275
 msgid "Opens clip history (single) clears all (double)"
 msgstr "Opens clip history (single) clears all (double)"
 
@@ -116,7 +116,7 @@ msgstr "Paste"
 msgid "Pasted"
 msgstr "Pasted"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Pin"
 msgstr "Pin"
 
@@ -132,7 +132,7 @@ msgstr "Text"
 msgid "Text content:"
 msgstr "Text content:"
 
-#: clip.py:600
+#: clip.py:592
 msgid "Unpin"
 msgstr "Unpin"
 
